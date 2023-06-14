@@ -7,5 +7,6 @@ urlpatterns = [
     # user  management
     path('account/', include('django.contrib.auth.urls')),
     # app development
+    path('account/', include('account.urls')),
     path('', include('store.urls')),
 ]

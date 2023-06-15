@@ -23,5 +23,4 @@ media/*
 !media/default/
 
 # static files
-static/*
 staticfiles/*

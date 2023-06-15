@@ -3,3 +3,5 @@ pip-chill==1.0.3
 psycopg2-binary==2.9.6
 pytest==7.3.2
 pytest-django==4.5.2
+django-crispy-forms==1.14.0
+crispy-bootstrap5==0.6

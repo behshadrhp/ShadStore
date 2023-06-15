@@ -1,8 +1,11 @@
-h1{
-    color: rgb(55, 0, 255);
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
 }
-
-.images {
-    height: 300px;
-    width: auto;
+h1 {
+color: rgb(224, 69, 69);
+}
+img.images {
+height: 300px;
+width: auto;
 }

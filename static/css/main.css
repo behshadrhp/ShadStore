@@ -1,3 +1,8 @@
 h1{
     color: rgb(55, 0, 255);
 }
+
+.images {
+    height: 300px;
+    width: auto;
+}

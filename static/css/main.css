@@ -1,6 +1,8 @@
 body {
     min-height: 75rem;
-    padding-top: 4.5rem;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 h1 {
 color: rgb(224, 69, 69);

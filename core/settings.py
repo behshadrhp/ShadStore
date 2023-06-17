@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # development
     'store.apps.StoreConfig',
-    'account.apps.AccountConfig',
+    'accounts.apps.AccountsConfig',
     # Third-party
     "crispy_forms",
     "crispy_bootstrap5",
@@ -109,8 +109,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# User account model
-AUTH_USER_MODEL = 'account.User'
+# User accounts model
+AUTH_USER_MODEL = 'accounts.User'
 
 # login & logout redirect page 
 LOGIN_REDIRECT_URL = 'home'

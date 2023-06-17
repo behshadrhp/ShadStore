@@ -3,8 +3,8 @@ from pytest_django.asserts import assertTemplateUsed, assertContains
 
 import pytest
 
-from account.forms import UserCreationForm
-from account.views import SignUpView
+from accounts.forms import UserCreationForm
+from accounts.views import SignUpView
 
 class TestSignUpPage():
     """This class is for test signup page template."""
@@ -29,5 +29,5 @@ class TestSignUpPage():
 
     def test_signup_view(self):
         """This function is for signup url path."""
-        view = resolve('/account/signup/')
+        view = resolve('/accounts/signup/')
         assert view.func.__name__ == SignUpView.as_view().__name__

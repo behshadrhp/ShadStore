@@ -22,7 +22,7 @@ class TestAboutPage():
 
     def test_about_page_template(self, response):
          """This class is for test template at about page."""
-        assertTemplateUsed(response, 'about.html')
+         assertTemplateUsed(response, 'about.html')
 
     def test_about_page_contains_correct_html(self, response):
         """This function is for test content html at about page."""

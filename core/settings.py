@@ -131,3 +131,6 @@ AUTHENTICATION_BACKENDS = (
 
 # email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# auto Remember account
+# ACCOUNT_SESSION_REMEMBER = False

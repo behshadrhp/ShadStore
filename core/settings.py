@@ -134,3 +134,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # auto Remember account
 # ACCOUNT_SESSION_REMEMBER = False
+
+# enter password
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False

@@ -24,14 +24,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    # development
-    'store.apps.StoreConfig',
-    'accounts.apps.AccountsConfig',
     # Third-party
     'crispy_forms',
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    # development
+    'accounts',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -146,6 +146,7 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 # other configuration
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+

@@ -37,7 +37,7 @@ services:
     depends_on:
       - postgres-db
     environment:
-      - DJANGO_SECRET_KEY="django-insecure-jbwdc9a@pmp=&*uk!b$5y86fw^ab(&u2qd66@3de92(76a2^c_"
+      - DJANGO_SECRET_KEY="b021e01d632077085a83a032e37130f70db0fe73984ab6277028534da06890806985cf1eec152d92558d50f47abca85fff13"
       - POSTGRES_HOST=postgres-db
  
 volumes:

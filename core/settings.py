@@ -150,3 +150,5 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
+# default email
+DEFAULT_FROM_EMAIL = "support@shadstore.info"

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # development
     'accounts',
     'store',
+    'books',
 ]
 
 MIDDLEWARE = [

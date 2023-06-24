@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     # app development
     path('', include('store.urls')),
+    path('books/', include('books.urls')),
 ]

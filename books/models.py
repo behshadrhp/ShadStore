@@ -1,10 +1,19 @@
 from django.db import models
 from django.urls import reverse
 
+import uuid
+
 
 
 class Book(models.Model):
     """This class is for save books."""
+
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        unique=True
+    )
 
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)

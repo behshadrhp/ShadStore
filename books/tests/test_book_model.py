@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 from books import models
@@ -6,18 +7,31 @@ import pytest
 from pytest_django.asserts import assertContains, assertTemplateUsed
 
 
+
+User = get_user_model()
+
 class BookTest():
     """This class is for test Book model."""
 
     @pytest.fixture
     def book(self):
         """This function is for create book object."""
+        user = User.objects.create_user(
+            username='user1',
+            email='user1@gmail.com',
+            password='12345678'
+        )
         book = models.Book.objects.create(
             title='Harry Potter',
             author='JK Rowling',
             price='39.99'
         )
-        return book
+        reviews = models.Review.objects.create(
+            book=book,
+            author=user,
+            reviews='hello world'
+        )
+        
     
     @pytest.fixture
     def response(self, client):
@@ -47,5 +61,6 @@ class BookTest():
         assert response.status_code == 200
         assert no_response.status_code == 404
         assertContains(response, "Harry Potter")
+        assertContains(response, "hello world")
         assertTemplateUsed(response, 'books/book_detail.html')
         

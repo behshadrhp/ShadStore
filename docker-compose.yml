@@ -31,7 +31,7 @@ services:
     build: .
     ports:
       - "8000:8000"
-    command: bash -c "python manage.py makemigrations --noinput && python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn core.wsgi"
+    command: bash -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && exec gunicorn core.wsgi:application -b 0.0.0.0:8000 -w 4"
     volumes:
       - .:/app/ShadStoretore
     depends_on:

@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'debug_toolbar',
     # development
     'accounts',
     'store',
@@ -34,6 +35,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -135,3 +137,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # default email
 DEFAULT_FROM_EMAIL = "support@shadstore.info"
+
+# Django debug toolbar configure
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

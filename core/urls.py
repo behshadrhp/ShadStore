@@ -7,7 +7,7 @@ import debug_toolbar
 
 urlpatterns = [
     # Django admin
-    path('admin/', admin.site.urls),
+    path('asdfowuercxvkjchvsodf-admin/', admin.site.urls),
     # user  management
     path('accounts/', include('allauth.urls')),
     # app development

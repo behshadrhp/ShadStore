@@ -12,6 +12,7 @@ class Book(models.Model):
 
     id = models.UUIDField(
         primary_key=True,
+        db_index=True,
         default=uuid.uuid4,
         editable=False,
         unique=True

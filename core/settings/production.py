@@ -18,3 +18,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'shadstore.ir']
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')),
 }
+
+SECURE_SSL_REDIRECT = os.env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+SECURE_HSTS_SECONDS = os.env.int("DJANGO_SECURE_HSTS_SECONDS", default=2592000) # 30 days
+SECURE_HSTS_INCLUDE_SUBDOMAINS = os.env.bool("DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS",default=True)
+SECURE_HSTS_PRELOAD = os.env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)

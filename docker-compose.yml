@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+
+  postgres-db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASS=postgres
+      - POSTGRES_PORT=5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    
+  pgadmin:
+    image: dpage/pgadmin4:7.3
+    container_name: pgadmin
+    depends_on:
+      - postgres-db
+    ports:
+      - "5051:5051"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
+      - PGADMIN_DEFAULT_PASSWORD=root
+      - PGADMIN_LISTEN_PORT=5051
+
+  django-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    command: bash -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && exec gunicorn core.wsgi:application -b 0.0.0.0:8000 -w 4"
+    volumes:
+      - .:/app/ShadStoretore
+    depends_on:
+      - postgres-db
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.production
+      - DJANGO_SECRET_KEY=1p%l*3txu3e@e)%qtdl4h7wz=rg*kaa!habr&%#d1blq-9u0n0
+      - DATABASE_URL=postgres://postgres:postgres@postgres-db:5432/postgres
+    links:
+      - "postgres-db"
+ 
+volumes:
+  postgres_data:

@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+
+{% block title %}Books{% endblock title %}
+
+{% block content %}
+<section class="book-list">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>Discover Our Book Collection</h1>
+<div class="book-grid">
+{% for book in book_list %}
+<div class="book-item">
+<img src="{{ book.cover.url }}" alt="{{ book.title }} Cover Image" style="width: 300px; height: 400px;">
+<div class="book-details">
+<h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
+<p class="author">By {{ book.author }}</p>
+<p class="description">{{ book.title }}</p>
+<div class="buttons">
+<a href="{{ book.get_absolute_url }}" class="btn btn-secondary">Read More</a>
+</div>
+</div>
+</div>
+<br><br><br><br>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock content %}

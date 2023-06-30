@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Welcome to ShadStore</h1>
+<p>Discover and explore a world of books.</p>
+
+        {% if user.is_authenticated %}
+            <p>Hi {{ user.email }}!</p>
+            <a href="{% url 'account_logout' %}" class="btn btn-primary">Log Out</a>
+        {% else %}
+            <p>You are not logged in.</p>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Log In</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary">Sign Up</a>
+        {% endif %}
+    </div>
+</div>
+</section>
+
+
+{% endblock %}
